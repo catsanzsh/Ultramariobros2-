@@ -83,6 +83,13 @@ void OneG_Quit() {
     printf("OneG shut down.\n");
 }
 
+// Optimized OneG graphics library for better performance
+void OneG_OptimizedRenderTexture(OneGRenderer* renderer, OneGTexture* texture, float x, float y, float width, float height) {
+    if (!renderer || !texture) return;
+    // Optimized drawing code
+    printf("Optimized rendering texture at (%f, %f) with size (%f, %f).\n", x, y, width, height);
+}
+
 #ifndef ONEG_H
 #define ONEG_H
 
@@ -103,6 +110,7 @@ void OneG_HandleEvents();
 void OneG_DestroyTexture(OneGTexture* texture);
 void OneG_DestroyRenderer(OneGRenderer* renderer);
 void OneG_Quit();
+void OneG_OptimizedRenderTexture(OneGRenderer* renderer, OneGTexture* texture, float x, float y, float width, float height);
 
 #endif
 

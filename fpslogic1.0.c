@@ -60,3 +60,29 @@ int main() {
     gameLoop();
     return 0;
 }
+// Function to render the game
+void renderGame() {
+    // Rendering code here (e.g., drawing objects on the screen)
+}
+
+// Function to synchronize the frame rate
+void synchronizeFrame(double timeLeft) {
+    if (timeLeft > 0) {
+        struct timespec ts;
+        ts.tv_sec = (time_t) timeLeft;
+void synchronizeFrame(double timeLeft) {
+    if (timeLeft > 0) {
+        struct timespec ts;
+        ts.tv_sec = (time_t) timeLeft;
+        ts.tv_nsec = (timeLeft - ts.tv_sec) * 1.0e9;
+        nanosleep(&ts, NULL); // Sleep to maintain a steady frame rate
+    }
+}
+
+int main() {
+    gameLoop();
+        ts.tv_nsec = (timeLeft - ts.tv_sec) * 1.0e9;
+    return 0;
+}
+    return 0;
+}
