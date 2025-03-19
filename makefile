@@ -14,7 +14,12 @@ SRCS = src/60fps.asm \
        src/mermaid-testnpc.c \
        src/program.c \
        src/texture.cpp \
-       src/texture_api.cpp
+       src/texture_api.cpp \
+       src/cogs4k.asm \
+       src/cogsnengines.c \
+       src/stars4k.c \
+       src/mario64_player.c \
+       src/mario-mips-player.asm
 
 # Object files
 OBJS = $(SRCS:.c=.o)
