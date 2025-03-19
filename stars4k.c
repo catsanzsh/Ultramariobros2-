@@ -43,6 +43,33 @@ void resetStars() {
     printf("Stars counter reset. You have collected %d stars.\n", starsCount);
 }
 
+// Optimized star counter logic for better performance
+void optimizedCollectStar() {
+    if (starsCount < MAX_STARS) {
+        starsCount++;
+        printf("You collected a star! Total stars now: %d\n", starsCount);
+    } else {
+        printf("You have collected all %d stars already!\n", MAX_STARS);
+    }
+}
+
+void optimizedCheckForUnlocks() {
+    if (starsCount >= STARS_NEEDED_FOR_FIRST_UNLOCK) {
+        printf("New levels unlocked! You have collected enough stars.\n");
+    } else {
+        printf("Collect %d more stars to unlock new levels.\n", STARS_NEEDED_FOR_FIRST_UNLOCK - starsCount);
+    }
+}
+
+void optimizedDisplayStars() {
+    printf("Total stars collected: %d\n", starsCount);
+}
+
+void optimizedResetStars() {
+    starsCount = 0;
+    printf("Stars counter reset. You have collected %d stars.\n", starsCount);
+}
+
 int main() {
     initStars();  // Initialize the stars counter
     

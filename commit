@@ -1,0 +1,12 @@
+Optimized game loop in `fpslogic1.0.c` to ensure 60 FPS
+Enhanced 3D engine in `b3313_2.0_lightning.c` for better performance and visuals
+Optimized rendering logic in `b3313_render_ft.c` for better performance
+Adjusted game loop in `60_fps.asm` to ensure 60 FPS
+Optimized game loop and input handling in `a.asm` for better performance
+Optimized Mario's movement logic in `mario64_player.c` for better performance
+Optimized HUD rendering logic in `hud.c` for better performance
+Optimized HUD rendering logic in `hudz64v0.asm` for better performance
+Optimized coin counter logic in `coincounter0.c` for better performance
+Optimized star counter logic in `stars4k.c` for better performance
+Optimized OneG graphics library in `OneG.c` for better performance
+Optimized usage of OneG graphics library in `program.c` for better performance

@@ -116,3 +116,37 @@ update_game_logic:
 game_over:
     li $t2, 0    ; Set game running flag to 0
     jr $ra
+
+# Optimized game loop and input handling for better performance
+mainLoop_optimized:
+    beqz $t2, end_game
+    jal handle_input_optimized
+    jal update_game_logic
+    jal render_graphics
+    j mainLoop_optimized
+
+handle_input_optimized:
+    # Read controller input
+    lui $a0, 0xA480  ; Controller port address
+    lw $a1, 0($a0)   ; Read input data
+
+    # Check joystick movement
+    andi $a2, $a1, 0x00FF  ; Extract joystick X axis
+    blt joystick_left_optimized
+    bgt joystick_right_optimized
+
+joystick_left_optimized:
+    # Move player left
+    lw $t3, PLAYER_X
+    addi $t3, $t3, -1
+    sw $t3, PLAYER_X
+    j handle_input_end_optimized
+
+joystick_right_optimized:
+    # Move player right
+    lw $t3, PLAYER_X
+    addi $t3, $t3, 1
+    sw $t3, PLAYER_X
+
+handle_input_end_optimized:
+    jr $ra
